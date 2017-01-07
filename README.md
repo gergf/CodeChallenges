@@ -1,4 +1,5 @@
 # CodeChallenges
 
 * Circle Packing (6/1/2017)
-	* Thanks to [Daniel Shiffman](http://shiffman.net/)
+* Markov Chains Words & Lettes (7/1/2017)
+	* Special thanks to [Daniel Shiffman](http://shiffman.net/)
