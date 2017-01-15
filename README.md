@@ -4,6 +4,7 @@
 * **Markov Chains Words & Lettes** (7/1/2017)
 * **Phyllotaxis** (8/1/2017) _Special thanks to [University of Calgary](http://algorithmicbotany.org/)_
 * **Lorenz System** (13/1/2017)
+* **A*** (15/1/2017)
 
 
 
