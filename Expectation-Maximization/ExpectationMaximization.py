@@ -1,4 +1,4 @@
-# Author: German A. Garcia Ferrando \\ gergarfe@inf.upv.es
+# Author: German A. Garcia Ferrando \\ gergarfe@inf.upv.es \\ https://github.com/gergf
 # Universitat Politecnica de Valencia \\ Master en Inteligencia Artificial, Reconocimiento de Formas e Imagen Digital 
 # ATTENTION: You are free to use/modify this software as you want, but when you will be enjoying the glory that cames
 # with victory and fame; please, remember me, and link at least my github ;P 
@@ -125,11 +125,17 @@ def EM(data, real_theta, fig, estimate_priors=True,
 				# new_mu = (sum_{i}(Wik * Xi)) / (Nk)  
 				new_means[k] = np.sum(data * likMatrix[:,k]) / np.sum(likMatrix[:,k], axis=0)
 		
-		if estimate_sigmas:
+		if estimate_sigmas and estimate_means:
 			# Same analogy that means
 			new_sigmas = np.zeros((_K))
 			for k in range(_K):
 				square = (data - new_means[k])**2
+				num = likMatrix[:,k] * square
+				new_sigmas[k] = np.sqrt(np.sum(num) / np.sum(likMatrix[:,k], axis=0))
+		elif estimate_sigmas and (not estimate_means): 
+			new_sigmas = np.zeros((_K))
+			for k in range(_K):
+				square = (data - theta[k,1])**2
 				num = likMatrix[:,k] * square
 				new_sigmas[k] = np.sqrt(np.sum(num) / np.sum(likMatrix[:,k], axis=0))
 
