@@ -32,7 +32,7 @@ def getRandomSigma(k, low=0, high=4):
 	This method computes the P(x|k) for a given x and k by using a normal distribution. 
 """
 def computePx_k(x, mean, std):
-	return (1 / np.sqrt(2*np.pi*(std**2))) * np.exp((-1/2) * (((x - mean)**2) / (2*std**2)) )
+	return (1 / np.sqrt(2*np.pi*(std**2))) * np.exp((-1/2) * (((x - mean)**2) / (std**2)) )
 
 """
 	Computes the likelihood with the current parameters.
